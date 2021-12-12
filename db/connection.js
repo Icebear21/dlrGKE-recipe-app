@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-dotenv.config();
 
 const connectDB = async () => {
-  await mongoose.connect(process.env.MONGODB_URL, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-  });
+  await mongoose.connect(
+    'mongodb+srv://admin:recipeAdmin2021@recipe-db.duxzj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    }
+  );
   console.log('db connected..');
 };
 
